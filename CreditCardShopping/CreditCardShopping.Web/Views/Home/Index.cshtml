@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<CreditCardShopping.Web.Models.ProductViewModel>
+
+<div class="container">
+    <div class="row text-center justify-content-center">
+        @{
+            foreach(var product in Model)
+            {
+                <div 
+                onclick="showDetails(@product.Id)"
+                class="productCards shadow rounded p-1 m-3" 
+                style="width: 236px; cursor: pointer;">
+                    <img src=@product.ImageURL style="height: 100px" />
+                    <p>@product.Name</p>
+                    <p>@product.Description</p>
+                    <p>@product.Price.ToString("c")</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+<partial name="Details">
+
+@section Scripts{
+    <script type="text/javascript">
+        var product = {}
+
+        async function showDetails(id){
+            var modalTitle = document.querySelector('.modal-title')
+            var modalBody = document.querySelector('.modal-body')
+            var modalBodyInput = modalBody.getElementsByTagName('input')[0]
+            var modalBodyImage = modalBody.getElementsByTagName('img')[0]
+            var modalBodyPs = modalBody.getElementsByTagName('p')
+
+            await getProductById(id)
+
+            const formatter = new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL' 
+            });
+
+            modalTitle.innerHTML = product.categoryName
+            modalBodyInput.value = product.id
+            modalBodyImage.src = product.imageURL
+            modalBodyPs[0].innerHTML = product.name
+            modalBodyPs[1].innerHTML = product.description
+            modalBodyPs[2].innerHTML = formatter.format(product.price)
+            $('#productModal').modal('show')
+        }
+
+        async function getProductById(id) {
+		    await $.ajax({
+			    url: '@Url.Action("GetProductById", "Home")',
+			    data: {id: id},
+			    type: 'GET',
+			    success: function(data) {
+				    product = data
+			    }
+		    });
+	    }
+
+    </script>
+}

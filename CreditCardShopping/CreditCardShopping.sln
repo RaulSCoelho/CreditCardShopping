@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{DAE9C355-6DA1-443C-A3FC-5A8A9C4A6B6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardShopping.Web", "CreditCardShopping.Web\CreditCardShopping.Web.csproj", "{AC1306C7-53BC-4A73-A068-195A3DCA7834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC1306C7-53BC-4A73-A068-195A3DCA7834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1306C7-53BC-4A73-A068-195A3DCA7834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1306C7-53BC-4A73-A068-195A3DCA7834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1306C7-53BC-4A73-A068-195A3DCA7834}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AC1306C7-53BC-4A73-A068-195A3DCA7834} = {DAE9C355-6DA1-443C-A3FC-5A8A9C4A6B6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {712E7FBE-11FB-435A-AF64-A36C6E4D6D22}
+	EndGlobalSection
+EndGlobal
