@@ -14,7 +14,7 @@ namespace CreditCardShopping.ProductAPI.Model
 
         [Column("price")]
         [Required]
-        public int Price { get; set; }
+        public double Price { get; set; }
 
         [Column("description")]
         [StringLength(500)]
