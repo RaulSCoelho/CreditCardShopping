@@ -12,11 +12,11 @@
                 <div 
                 onclick="showDetails(@product.Id)"
                 class="productCards shadow rounded p-1 m-3" 
-                style="width: 236px; cursor: pointer;">
+                style="width: 236px; max-height: 300px; cursor: pointer;">
                     <img src=@product.ImageURL style="height: 100px" />
-                    <p>@product.Name</p>
-                    <p>@product.Description</p>
-                    <p>@product.Price.ToString("c")</p>
+                    <p class="indexCards">@product.Name</p>
+                    <p class="indexCards">@product.Description</p>
+                    <p class="indexCards">@product.Price.ToString("c")</p>
                 </div>
             }
         }

@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+p.indexCards {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

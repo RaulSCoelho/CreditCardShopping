@@ -24,30 +24,11 @@ namespace CreditCardShopping.Web.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetProductById(int id)
+        public async Task<JsonResult> GetProductById(int id)
         {
-            var products = new List<ProductViewModel>();
-            var product1 = new ProductViewModel()
-            {
-                Id = 1,
-                CategoryName = "Notebook Gamer",
-                Name = "Notebook Acer Nitro 5",
-                Price = 5199.99,
-                Description = "GTX 1650, intel core i5, 8GB de RAM, 512GB SSD",
-                ImageURL = "https://www.kabum.com.br/conteudo/descricao/113442/img/header-image.png"
-            };
+            var product = await _productService.FindProductById(id);
 
-            products.Add(product1);
-
-            foreach(var product in products)
-            {
-                if(product.Id == id)
-                {
-                    return Json(product1);
-                }
-            }
-
-            return Json("Produto não encontrado");
+            return Json(product);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Product Page";
+}
+
+@model List<CreditCardShopping.Web.Models.ProductViewModel>
+
+<div class="container border">
+    <div class="container p-2">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-primary">Products List</h1>
+            </div>
+            <div class="col text-end align-self-center">
+                <a asp-action="ProductCreate" class="btn btn-outline-primary">
+                    <i class="fas fa-plus"></i> Create New Product
+                </a>
+            </div>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.CategoryName</td>
+                    <td>@product.Price.ToString("c")</td>
+                    <td class="text-end">
+                        <a asp-action="ProductUpdate" class="btn btn-success" asp-route-id="@product.Id">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a asp-action="ProductDelete" class="btn btn-danger" asp-route-id="@product.Id">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
