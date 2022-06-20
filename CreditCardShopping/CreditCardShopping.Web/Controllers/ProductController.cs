@@ -1,18 +1,26 @@
 ﻿using CreditCardShopping.Web.Models;
 using CreditCardShopping.Web.Services.IServices;
+using CreditCardShopping.Web.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CreditCardShopping.Web.Controllers
 {
     public class ProductController : Controller
     {
+        #region Campos
         private readonly IProductService _productService;
+        #endregion
 
+        #region Ctr
         public ProductController(IProductService productService)
         {
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
+        #endregion
 
+        #region Metodos
+        [Authorize]
         public async Task<IActionResult> ProductIndex()
         {
             var products = await _productService.FindAllProducts();
@@ -25,6 +33,7 @@ namespace CreditCardShopping.Web.Controllers
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> ProductCreate(ProductViewModel model)
         {
@@ -44,6 +53,7 @@ namespace CreditCardShopping.Web.Controllers
             return NotFound();
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> ProductUpdate(ProductViewModel model)
         {
@@ -56,6 +66,7 @@ namespace CreditCardShopping.Web.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> ProductDelete(long id)
         {
             var response = await _productService.DeleteProductById(id);
@@ -63,5 +74,6 @@ namespace CreditCardShopping.Web.Controllers
 
             return NotFound();
         }
+        #endregion
     }
 }

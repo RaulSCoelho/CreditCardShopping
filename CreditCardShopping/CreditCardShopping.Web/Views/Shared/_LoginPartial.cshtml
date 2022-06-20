@@ -1,0 +1,21 @@
+﻿<ul class="navbar-nav">
+	@if (User.Identity.IsAuthenticated)
+	{
+		<div class="dropdown">
+			<a class="dropdown-toggle text-dark text-decoration-none" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+				<img src="~/images/profile.jpeg" class="rounded-circle" style="width: 50px;" />
+			</a>
+
+			<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+				<li><a class="dropdown-item" asp-action="BankAccount" asp-controller="Home">Bank Account</a></li>
+				<li><a class="dropdown-item" asp-action="Logout" asp-controller="Home">Logout</a></li>
+			</ul>
+		</div>
+	}
+	else
+	{
+		<li class="nav-item">
+			<a class="nav-link text-dark" asp-action="Login" asp-controller="Home">Login</a>
+		</li>
+	}
+</ul>

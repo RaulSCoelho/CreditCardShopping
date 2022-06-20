@@ -50,3 +50,13 @@ C:\Users\rauls\OneDrive\Documentos\SixConsult\CreditCardShopping\CreditCardShopp
 C:\Users\rauls\OneDrive\Documentos\SixConsult\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\obj\Debug\net6.0\CreditCardShopping.Web.pdb
 C:\Users\rauls\OneDrive\Documentos\SixConsult\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\obj\Debug\net6.0\CreditCardShopping.Web.genruntimeconfig.cache
 C:\Users\rauls\OneDrive\Documentos\SixConsult\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\obj\Debug\net6.0\ref\CreditCardShopping.Web.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\estagiario\Documents\DEV WEB\CreditCardShopping\CreditCardShopping\CreditCardShopping.Web\obj\Debug\net6.0\CreditCardShopping.Web.csproj.CopyComplete

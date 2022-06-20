@@ -1,5 +1,6 @@
 ﻿using CreditCardShopping.Web.Models;
 using CreditCardShopping.Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -29,6 +30,17 @@ namespace CreditCardShopping.Web.Controllers
             var product = await _productService.FindProductById(id);
 
             return Json(product);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Login()
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Logout()
+        {
+            return SignOut("Cookies", "oidc");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj": {}
+    "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj": {
+    "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj",
+        "projectUniqueName": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj",
         "projectName": "CreditCardShopping.Web",
-        "projectPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj",
-        "packagesPath": "C:\\Users\\rauls\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\obj\\",
+        "projectPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\CreditCardShopping.Web.csproj",
+        "packagesPath": "C:\\Users\\estagiario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\rauls\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\estagiario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,6 +44,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.19.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -61,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
