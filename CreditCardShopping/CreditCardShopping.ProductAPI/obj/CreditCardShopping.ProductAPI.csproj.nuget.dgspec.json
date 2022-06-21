@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj": {}
+    "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj": {
+    "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj",
+        "projectUniqueName": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj",
         "projectName": "CreditCardShopping.ProductAPI",
-        "projectPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj",
-        "packagesPath": "C:\\Users\\estagiario\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\obj\\",
+        "projectPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\CreditCardShopping.ProductAPI.csproj",
+        "packagesPath": "C:\\Users\\rauls\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.ProductAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\estagiario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\rauls\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -98,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

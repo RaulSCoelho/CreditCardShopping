@@ -1648,25 +1648,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\estagiario\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\rauls\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\CreditCardShopping.IdentityServer.csproj",
+      "projectUniqueName": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\CreditCardShopping.IdentityServer.csproj",
       "projectName": "CreditCardShopping.IdentityServer",
-      "projectPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\CreditCardShopping.IdentityServer.csproj",
-      "packagesPath": "C:\\Users\\estagiario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\estagiario\\Documents\\DEV WEB\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\obj\\",
+      "projectPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\CreditCardShopping.IdentityServer.csproj",
+      "packagesPath": "C:\\Users\\rauls\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rauls\\OneDrive\\Documentos\\SixConsult\\CreditCardShopping\\CreditCardShopping\\CreditCardShopping.IdentityServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\estagiario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rauls\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1740,7 +1738,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
