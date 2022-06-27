@@ -48,8 +48,12 @@
 						<button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
 					</form>
 				</div>
+				<hr class="solid">
 				<div class="card-footer">
-					<a href="@Url.Action("Login", new { Model.ReturnUrl })">Login</a>
+					<h4>Already have an account?</h4>
+					<a class="btn btn-primary" href="@Url.Action("Login", new { Model.ReturnUrl })">
+						Login
+					</a>
 				</div>
 			</div>
 		</div>

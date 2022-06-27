@@ -2,6 +2,8 @@ using CreditCardShopping.IdentityServer.Configuration;
 using CreditCardShopping.IdentityServer.Initializer;
 using CreditCardShopping.IdentityServer.Model;
 using CreditCardShopping.IdentityServer.Model.Context;
+using CreditCardShopping.IdentityServer.Services;
+using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +33,7 @@ var Builder = builder.Services.AddIdentityServer(options =>
     .AddAspNetIdentity<ApplicationUser>();
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
 
 Builder.AddDeveloperSigningCredential();
 

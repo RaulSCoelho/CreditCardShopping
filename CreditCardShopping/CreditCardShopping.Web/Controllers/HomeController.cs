@@ -1,25 +1,28 @@
 ﻿using CreditCardShopping.Web.Models;
 using CreditCardShopping.Web.Services.IServices;
+using CreditCardShopping.Web.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace CreditCardShopping.Web.Controllers
 {
-    public class HomeController : Controller
+	public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly JwtUtil? _jwt;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
-        {
-            _logger = logger;
-            _productService = productService;
-        }
+		public HomeController(ILogger<HomeController> logger, IProductService productService)
+		{
+			_logger = logger;
+			_productService = productService;
+		}
 
-        public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index()
         {
-            var products = await _productService.FindAllProducts();
+            var token = _jwt.GetToken(HttpContext).Result;
+            var products = await _productService.FindAllProducts(token);
 
             return View(products);
         }
@@ -27,7 +30,8 @@ namespace CreditCardShopping.Web.Controllers
         [HttpGet]
         public async Task<JsonResult> GetProductById(int id)
         {
-            var product = await _productService.FindProductById(id);
+            var token = _jwt.GetToken(HttpContext).Result;
+            var product = await _productService.FindProductById(id, token);
 
             return Json(product);
         }
@@ -35,6 +39,7 @@ namespace CreditCardShopping.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Login()
         {
+            var token = _jwt.GetToken(HttpContext).Result;
             return RedirectToAction(nameof(Index));
         }
 
