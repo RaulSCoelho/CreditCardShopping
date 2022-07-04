@@ -8,29 +8,30 @@ namespace CreditCardShopping.Web.Services
     {
         private readonly HttpClient _client;
         public const string BasePath = "api/v1/Product";
+        private static JwtUtil jwt = new JwtUtil();
 
-		public ProductService(HttpClient client)
+        public ProductService(HttpClient client)
 		{
 			_client = client ?? throw new ArgumentNullException(nameof(client));
 		}
 
 		public async Task<List<ProductViewModel>> FindAllProducts(string token)
         {
-            new JwtUtil().Authorize(_client, token);
+            jwt.Authorize(_client, token);
             var response = await _client.GetAsync(BasePath);
             return await response.ReadContentAs<List<ProductViewModel>>();
         }
 
         public async Task<ProductViewModel> FindProductById(long id, string token)
         {
-            new JwtUtil().Authorize(_client, token);
+            jwt.Authorize(_client, token);
             var response = await _client.GetAsync($"{BasePath}/{id}");
             return await response.ReadContentAs<ProductViewModel>();
         }
 
         public async Task<ProductViewModel> CreateProduct(ProductViewModel product, string token)
         {
-            new JwtUtil().Authorize(_client, token);
+            jwt.Authorize(_client, token);
             var response = await _client.PostAsJson(BasePath, product);
             if (response.IsSuccessStatusCode)
                 return await response.ReadContentAs<ProductViewModel>();
@@ -39,7 +40,7 @@ namespace CreditCardShopping.Web.Services
 
         public async Task<ProductViewModel> UpdateProduct(ProductViewModel product, string token)
         {
-            new JwtUtil().Authorize(_client, token);
+            jwt.Authorize(_client, token);
             var response = await _client.PutAsJson(BasePath, product);
             if (response.IsSuccessStatusCode)
                 return await response.ReadContentAs<ProductViewModel>();
@@ -48,7 +49,7 @@ namespace CreditCardShopping.Web.Services
 
         public async Task<bool> DeleteProductById(long id, string token)
         {
-            new JwtUtil().Authorize(_client, token);
+            jwt.Authorize(_client, token);
             var response = await _client.DeleteAsync($"{BasePath}/{id}");
             if (response.IsSuccessStatusCode)
                 return await response.ReadContentAs<bool>();

@@ -10,6 +10,7 @@ namespace CreditCardShopping.Web.Controllers
     {
         #region Campos
         private readonly IProductService _productService;
+        private static JwtUtil jwt = new JwtUtil();
         #endregion
 
         #region Ctr
@@ -23,7 +24,7 @@ namespace CreditCardShopping.Web.Controllers
         [Authorize]
         public async Task<IActionResult> ProductIndex()
         {
-            var token = new JwtUtil().GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             var products = await _productService.FindAllProducts(token);
 
             return View(products);
@@ -38,7 +39,7 @@ namespace CreditCardShopping.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ProductCreate(ProductViewModel model)
         {
-            var token = new JwtUtil().GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             if (ModelState.IsValid)
             {
                 var response = await _productService.CreateProduct(model, token);
@@ -50,7 +51,7 @@ namespace CreditCardShopping.Web.Controllers
 
         public async Task<IActionResult> ProductUpdate(long id)
         {
-            var token = new JwtUtil().GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             var product = await _productService.FindProductById(id, token);
             if (product != null) return View(product);
             return NotFound();
@@ -60,7 +61,7 @@ namespace CreditCardShopping.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> ProductUpdate(ProductViewModel model)
         {
-            var token = new JwtUtil().GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             if (ModelState.IsValid)
             {
                 var response = await _productService.UpdateProduct(model, token);
@@ -73,7 +74,7 @@ namespace CreditCardShopping.Web.Controllers
         [Authorize(Roles = Role.Admin)]
         public async Task<IActionResult> ProductDelete(long id)
         {
-            var token = new JwtUtil().GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             var response = await _productService.DeleteProductById(id, token);
             if (response) return RedirectToAction(nameof(ProductIndex));
 

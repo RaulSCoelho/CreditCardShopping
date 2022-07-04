@@ -11,7 +11,7 @@ namespace CreditCardShopping.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
-        private readonly JwtUtil? _jwt;
+        private static JwtUtil jwt = new JwtUtil();
 
 		public HomeController(ILogger<HomeController> logger, IProductService productService)
 		{
@@ -21,7 +21,7 @@ namespace CreditCardShopping.Web.Controllers
 
 		public async Task<IActionResult> Index()
         {
-            var token = _jwt.GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             var products = await _productService.FindAllProducts(token);
 
             return View(products);
@@ -30,7 +30,7 @@ namespace CreditCardShopping.Web.Controllers
         [HttpGet]
         public async Task<JsonResult> GetProductById(int id)
         {
-            var token = _jwt.GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             var product = await _productService.FindProductById(id, token);
 
             return Json(product);
@@ -39,7 +39,7 @@ namespace CreditCardShopping.Web.Controllers
         [Authorize]
         public async Task<IActionResult> Login()
         {
-            var token = _jwt.GetToken(HttpContext).Result;
+            var token = jwt.GetToken(HttpContext).Result;
             return RedirectToAction(nameof(Index));
         }
 
