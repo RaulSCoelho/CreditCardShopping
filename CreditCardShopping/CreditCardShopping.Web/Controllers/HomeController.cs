@@ -28,12 +28,13 @@ namespace CreditCardShopping.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<JsonResult> GetProductById(int id)
+        [Authorize]
+        public async Task<IActionResult> Details(int id)
         {
             var token = jwt.GetToken(HttpContext).Result;
             var product = await _productService.FindProductById(id, token);
 
-            return Json(product);
+            return View(product);
         }
 
         [Authorize]

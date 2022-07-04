@@ -1,20 +1,9 @@
-﻿<div id="productModal" class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">CategoryName</h5>
-        <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center justify-content-center">
-            <input hidden/>
-            <img src="ImageURL" style="height: 200px" />
-            <p>ProductName</p>
-            <p>productDescription</p>
-            <p>productPrice</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+﻿@model ProductViewModel
+
+<div class="container">
+    <div class="row text-center justify-content-center">
+        <div class="col-6 border">
+            @Model.Description
+        </div>
     </div>
-  </div>
 </div>
