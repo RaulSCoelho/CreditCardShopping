@@ -9,9 +9,10 @@
 		@{
 			foreach (var product in Model)
 			{
-				<a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@product.Id">
-					<div class="productCards shadow rounded p-1 m-3"
-				 	style="width: 236px; max-height: 300px; cursor: pointer;">
+				<a class="text-decoration-none text-dark p-0 m-3" asp-action="Details" asp-route-id="@product.Id"
+				style="width: 236px;">
+					<div class="productCards shadow rounded p-1"
+					style="height: 300px;">
 						<img src=@product.ImageURL style="height: 100px" />
 						<p class="indexCards">@product.Name</p>
 						<p class="indexCards">@product.Description</p>

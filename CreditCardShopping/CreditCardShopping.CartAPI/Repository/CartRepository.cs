@@ -17,48 +17,57 @@ namespace CreditCardShopping.CartAPI.Repository
             _mapper = mapper;
         }
 
-        public async Task<List<ProductVO>> FindAll()
+        public Task<CartVO> FindCartByUserId(string userId)
         {
-            var products = await _context.Products.ToListAsync();
-            return _mapper.Map<List<ProductVO>>(products);
+            throw new NotImplementedException();
         }
 
-        public async Task<ProductVO> FindById(long id)
+        public async Task<CartVO> SaveOrUpdateCart(CartVO cartVo)
         {
-            var product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
-            return _mapper.Map<ProductVO>(product);
-        }
+            var cart = _mapper.Map<Cart>(cartVo);
+            var products = await _context.Products.FirstOrDefaultAsync(
+                p => p.Id == cartVo.CartDetails.FirstOrDefault().ProductId);
 
-        public async Task<ProductVO> Create(ProductVO vo)
-        {
-            var product = _mapper.Map<Product>(vo);
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ProductVO>(product);
-        }
-
-        public async Task<ProductVO> Update(ProductVO vo)
-        {
-            var product = _mapper.Map<Product>(vo);
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ProductVO>(product);
-        }
-
-        public async Task<bool> Delete(long id)
-        {
-            try
+            if(products == null)
             {
-                var product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
-                if (product == null) return false;
-                _context.Products.Remove(product);
+                _context.Products.Add(cart.CartDetails.FirstOrDefault().Product);
                 await _context.SaveChangesAsync();
-                return true;
             }
-            catch (Exception)
+
+            var cartHeader = await _context.CartHeaders.AsNoTracking().FirstOrDefaultAsync(
+                c => c.UserId == cart.CartHeader.UserId);
+
+            if(cartHeader == null)
             {
-                return false;
+                _context.CartHeaders.Add(cart.CartHeader);
+                await _context.SaveChangesAsync();
+                cart.CartDetails.FirstOrDefault().CartHeaderId = cart.CartHeader.Id;
+                cart.CartDetails.FirstOrDefault().Product = null;
+                _context.CartDetails.Add(cart.CartDetails.FirstOrDefault());
+                await _context.SaveChangesAsync();
             }
+
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> RemoveFromCart(long cartDetailsId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ApplyCoupon(string userId, string couponCode)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> RemoveCoupon(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ClearCart(string userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
