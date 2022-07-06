@@ -16,7 +16,7 @@ namespace CreditCardShopping.CartAPI.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        [HttpGet("get-cart/{id}")]
+        [HttpGet("get-cart/{userId}")]
         [Authorize]
         public async Task<ActionResult<CartVO>> FindCartByUserId(string userId)
         {

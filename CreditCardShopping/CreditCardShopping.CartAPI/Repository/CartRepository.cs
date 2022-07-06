@@ -20,13 +20,13 @@ namespace CreditCardShopping.CartAPI.Repository
         public async Task<CartVO> FindCartByUserId(string userId)
         {
             var cartHeader = await _context.CartHeaders.FirstOrDefaultAsync(c => c.UserId == userId);
-            Cart cart = new()
+            var cart = new Cart()
             {
                 CartHeader = cartHeader,
                 CartDetails = _context.CartDetails.Where(c => c.CartHeaderId == cartHeader.Id)
                 .Include(c => c.Product).ToList(),
             };
-            throw new NotImplementedException();
+            return _mapper.Map<CartVO>(cart);
         }
 
         public async Task<CartVO> SaveOrUpdateCart(CartVO cartVo)

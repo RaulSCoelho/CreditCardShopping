@@ -23,8 +23,7 @@ namespace CreditCardShopping.Web.Controllers
 
 		public async Task<IActionResult> Index()
         {
-            var token = jwt.GetToken(HttpContext).Result;
-            var products = await _productService.FindAllProducts(token);
+            var products = await _productService.FindAllProducts();
 
             return View(products);
         }

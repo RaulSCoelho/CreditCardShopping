@@ -22,12 +22,21 @@ namespace CreditCardShopping.Web.Controllers
 
         #region Metodos
         [Authorize]
-        public async Task<IActionResult> CartIndex(string userId)
+        public async Task<IActionResult> CartIndex()
         {
-            var token = jwt.GetToken(HttpContext).Result;
-            var cart = await _cartService.FindCartByUserId(userId, token);
+            var cart = await FindUserCart();
 
             return View(cart);
+        }
+
+        private async Task<CartViewModel> FindUserCart()
+        {
+            var token = jwt.GetToken(HttpContext).Result;
+            var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;
+
+            var response = await _cartService.FindCartByUserId(userId, token);
+
+            return response;
         }
         #endregion
     }

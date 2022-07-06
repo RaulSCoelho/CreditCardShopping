@@ -15,9 +15,8 @@ namespace CreditCardShopping.Web.Services
 			_client = client ?? throw new ArgumentNullException(nameof(client));
 		}
 
-		public async Task<List<ProductViewModel>> FindAllProducts(string token)
+		public async Task<List<ProductViewModel>> FindAllProducts()
         {
-            jwt.Authorize(_client, token);
             var response = await _client.GetAsync(BasePath);
             return await response.ReadContentAs<List<ProductViewModel>>();
         }
