@@ -26,14 +26,18 @@ namespace CreditCardShopping.Web.Services
         {
             jwt.Authorize(_client, token);
             var response = await _client.PostAsJson($"{BasePath}/save-cart", cartViewModel);
-            return await response.ReadContentAs<CartViewModel>();
+            if (response.IsSuccessStatusCode)
+                return await response.ReadContentAs<CartViewModel>();
+            else throw new Exception($"Something went wrong calling the API: {response.ReasonPhrase}");
         }
 
         public async Task<bool> RemoveFromCart(int id, string token)
         {
             jwt.Authorize(_client, token);
             var response = await _client.DeleteAsync($"{BasePath}/remove-cart/{id}");
-            return await response.ReadContentAs<bool>();
+            if (response.IsSuccessStatusCode)
+                return await response.ReadContentAs<bool>();
+            else throw new Exception($"Something went wrong calling the API: {response.ReasonPhrase}");
         }
 
         public Task<bool> ClearCart(string userId, string token)
