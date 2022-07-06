@@ -16,7 +16,7 @@ namespace CreditCardShopping.CartAPI.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get-cart/{id}")]
         [Authorize]
         public async Task<ActionResult<CartVO>> FindCartByUserId(string userId)
         {
@@ -25,7 +25,7 @@ namespace CreditCardShopping.CartAPI.Controllers
             return Ok(cart);
         }
 
-        [HttpPost]
+        [HttpPost("save-cart")]
         [Authorize]
         public async Task<ActionResult<CartVO>> SaveOrUpdateCart(CartVO cartVo)
         {
@@ -34,7 +34,7 @@ namespace CreditCardShopping.CartAPI.Controllers
             return Ok(cart);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("remove-cart/{id}")]
         [Authorize]
         public async Task<ActionResult<bool>> RemoveFromCart(int id)
         {
