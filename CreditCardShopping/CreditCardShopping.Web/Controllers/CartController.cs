@@ -24,9 +24,7 @@ namespace CreditCardShopping.Web.Controllers
         [Authorize]
         public async Task<IActionResult> CartIndex()
         {
-            var cart = await FindUserCart();
-
-            return View(cart);
+            return View(await FindUserCart());
         }
 
         private async Task<CartViewModel> FindUserCart()
@@ -37,6 +35,19 @@ namespace CreditCardShopping.Web.Controllers
             var response = await _cartService.FindCartByUserId(userId, token);
 
             return response;
+        }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            var token = jwt.GetToken(HttpContext).Result;
+
+            var response = await _cartService.RemoveFromCart(id, token);
+
+            if (response)
+            {
+                return RedirectToAction(nameof(CartIndex));
+            }
+            return View();
         }
         #endregion
     }
